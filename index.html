@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GZ</title>
-     <link rel="icon" href="https://firebasestorage.googleapis.com/v0/b/genz-abb36.firebasestorage.app/o/photo_2025-03-09_13-00-43.jpg?alt=media&token=e3d3c543-164c-4c79-8cd1-0a9c710fb002"> <!-- Profil -->
+     <link rel="icon" href="https://firebasestorage.googleapis.com/v0/b/genz-abb36.firebasestorage.app/o/photo_2025-03-09_13-00-43.jpg?alt=media&token=e3d3c543-164c-4c79-8cd1-0a9c710fb002"> <!-- โปรไฟล์ -->
     <link href="https://fonts.googleapis.com/css2?family=Billabong&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -174,7 +174,7 @@
             color: white;
         }
 
-        /* Styles pour le modal */
+        /* สไตล์สำหรับโมดัล */
         .modal {
             display: none;
             position: fixed;
@@ -193,7 +193,7 @@
             border: 1px solid #007bff;
             border-radius: 60px;
             width: 180px;
-            font-size: 0.3px
+            font-size: 0.3px;
             max-width: 70%;
             text-align: center;
             max-height: 60vh;
@@ -245,7 +245,7 @@
     <h1 translate="no">G-Z</h1>
     <div>
       <a href="pagedetraduction.html">
-        <i class="fas fa-language share-icon"></i> <!-- Icône de traduction -->
+        <i class="fas fa-language share-icon"></i> <!-- ไอคอนการแปล -->
       </a>
     </div>
   </header>
@@ -253,12 +253,12 @@
   <div class="divider"></div>
 
   <div class="button-container">
-    <a class="button" href="Faq.html" translate="yes"><i class="fas fa-question-circle"></i>FAQ</a>
+    <a class="button" href="Faq.html" translate="yes"><i class="fas fa-question-circle"></i>คำถามที่พบบ่อย</a>
     <a class="button" href="Statistiques.html" id="statistiquesButton">
-      <i class="fas fa-chart-bar"></i> Découvrir</a>
-    <a class="button" href="Contact.html"><i class="fas fa-envelope"></i>Contact</a>
-    <a class="button" href="Terms.html"><i class="fas fa-file-contract"></i>Conditions</a>
-    <a class="button" href="Confidentialité.html"><i class="fas fa-file-contract"></i>Confidentialité</a>
+      <i class="fas fa-chart-bar"></i> ค้นพบ</a>
+    <a class="button" href="Contact.html"><i class="fas fa-envelope"></i>ติดต่อ</a>
+    <a class="button" href="Terms.html"><i class="fas fa-file-contract"></i>ข้อกำหนด</a>
+    <a class="button" href="Confidentialité.html"><i class="fas fa-file-contract"></i>ความเป็นส่วนตัว</a>
   </div>
 
   <script>
@@ -269,43 +269,43 @@
 
     setInterval(() => {
       button.style.borderBottom = `4px solid ${colors[index]}`;
-      index = (index + 1) % colors.length; // Cycle à travers les couleurs
-    }, 400); // Change de couleur toutes les secondes
+      index = (index + 1) % colors.length; // วนรอบผ่านสี
+    }, 400); // เปลี่ยนสีทุกวินาที
   </script>
 
   <div class="divider"></div>
 
   <div class="notification">
-    <span class="notification-text">Découvrons ensemble les secrets de nos générations.</span>
+    <span class="notification-text">มาค้นพบความลับของคนรุ่นเราไปด้วยกัน</span>
     <div class="new-message-badge"></div>
   </div>
 
   <div class="divider"></div>
 
   <div class="footer-title">
-    Rejoignez-nous pour découvrir les secrets de notre génération en quelques clics !
+    เข้าร่วมกับเราเพื่อค้นพบความลับของคนรุ่นเราด้วยการคลิกเพียงไม่กี่ครั้ง!
   </div>
 
-  <input type="date" class="date-input" id="birthdate" placeholder="Sélectionnez votre date de naissance" min="1900-01-01" max="" />
+  <input type="date" class="date-input" id="birthdate" placeholder="เลือกวันเกิดของคุณ" min="1900-01-01" max="" />
   <select class="country-select" id="countrySelect">
-    <option value="" disabled selected>Sélectionnez votre pays de naissance</option>
+    <option value="" disabled selected>เลือกประเทศที่คุณเกิด</option>
   </select>
   <p style="text-align: center; color: black; font-size: 0.7em; margin-top: 5px; text-decoration: underline; text-decoration-color: rgb(0, 123, 191);">
-    En soumettant, vous acceptez nos conditions d'utilisation.
+    โดยการส่งข้อมูล คุณยอมรับข้อกำหนดการใช้งานของเรา
   </p>
-  <button class="submit-button" type="submit">Soumettre</button>
+  <button class="submit-button" type="submit">ส่ง</button>
 
-  <i class="fas fa-redo reset-icon" id="resetButton" title="Réinitialiser"></i>
+  <i class="fas fa-redo reset-icon" id="resetButton" title="รีเซ็ต"></i>
 
   <div class="divider"></div>
 
   <div class="rectangle">
-    <div class="text-line bold" style="font-size: 1em; color: #0056b3;">Comment ça marche ?</div>
-    <div class="text-line"> Deux sélecteurs sont à votre disposition : le premier est un calendrier pour choisir votre date de naissance, et le second est un sélecteur pour votre pays de naissance. Une fois vos sélections effectuées, cliquez sur "Soumettre". Après cela, on vous demandera de préciser votre genre ; cliquez sur cette option pour devenir contributeur. Enfin, cliquez sur le bouton "Découvrir", qui clignote en vert. Vous découvrirez alors deux nouveaux sélecteurs : naviguez selon vos préférences pour explorer les statistiques. </div>
+    <div class="text-line bold" style="font-size: 1em; color: #0056b3;">มันทำงานอย่างไร?</div>
+    <div class="text-line">มีตัวเลือกสองอย่างสำหรับคุณ: อย่างแรกคือปฏิทินสำหรับเลือกวันเกิดของคุณ และอย่างที่สองคือตัวเลือกสำหรับประเทศที่คุณเกิด หลังจากทำการเลือกแล้ว ให้คลิก "ส่ง" หลังจากนั้น คุณจะถูกขอให้ระบุเพศของคุณ; คลิกที่ตัวเลือกนี้เพื่อเป็นผู้มีส่วนร่วม สุดท้าย คลิกปุ่ม "ค้นพบ" ที่กะพริบเป็นสีเขียว คุณจะพบตัวเลือกใหม่สองอย่าง: นำทางตามความชอบของคุณเพื่อสำรวจสถิติ</div>
   </div>
 
   <div class="text-line" style="text-align: center; color: black;">
-    <span style="color: #007bff;">_____</span> Ne manquez rien <span style="color: #007bff;">_____</span>
+    <span style="color: #007bff;">_____</span> อย่าพลาดสิ่งใด <span style="color: #007bff;">_____</span>
   </div>
 
   <footer>
@@ -330,31 +330,31 @@
     </div>
   </footer>
 
-  <!-- Modal -->
+  <!-- โมดัล -->
   <div id="genderModal" class="modal">
     <div class="modal-content">
-      <div class="modal-header">Votre genre ?</div>
+      <div class="modal-header">เพศของคุณ?</div>
       
-      <div class="gender-category">Genres binaires</div>
+      <div class="gender-category">เพศไบนารี</div>
       <div class="modal-footer">
-        <button class="close-button gender-option" value="Man">Man</button>
-        <button class="close-button gender-option" value="Woman">Woman</button>
+        <button class="close-button gender-option" value="Man">ชาย</button>
+        <button class="close-button gender-option" value="Woman">หญิง</button>
       </div>
       
-      <div class="gender-category">Genres non-binaires</div>
+      <div class="gender-category">เพศนอนไบนารี</div>
       <div class="modal-footer">
-        <button class="close-button gender-option" value="Non-binary">Non-binary</button>
-        <button class="close-button gender-option" value="Genderqueer">Genderqueer</button>
-        <button class="close-button gender-option" value="Genderfluid">Genderfluid</button>
-        <button class="close-button gender-option" value="Agender">Agender</button>
+        <button class="close-button gender-option" value="Non-binary">นอนไบนารี</button>
+        <button class="close-button gender-option" value="Genderqueer">เพศเควียร์</button>
+        <button class="close-button gender-option" value="Genderfluid">เพศที่ไม่คงที่</button>
+        <button class="close-button gender-option" value="Agender">ไม่มีเพศ</button>
       </div>
       
-      <div class="gender-category">Autres identités de genre</div>
+      <div class="gender-category">อัตลักษณ์ทางเพศอื่นๆ</div>
       <div class="modal-footer">
-        <button class="close-button gender-option" value="Transgender">Transgender</button>
-        <button class="close-button gender-option" value="Two-Spirit">Two-Spirit</button>
-        <button class="close-button gender-option" value="Bigender">Bigender</button>
-        <button class="close-button gender-option" value="Androgyne">Androgyne</button>
+        <button class="close-button gender-option" value="Transgender">ข้ามเพศ</button>
+        <button class="close-button gender-option" value="Two-Spirit">ทูสปิริต</button>
+        <button class="close-button gender-option" value="Bigender">ไบเจนเดอร์</button>
+        <button class="close-button gender-option" value="Androgyne">แอนโดรจิน</button>
       </div>
     </div>
   </div>
@@ -378,24 +378,24 @@
     const database = getDatabase(app);
     const auth = getAuth(app);
 
-    // Authentification anonyme
+    // การยืนยันตัวตนแบบไม่ระบุชื่อ
     signInAnonymously(auth)
       .then((userCredential) => {
         const user = userCredential.user;
-        console.log("Utilisateur connecté : ", user.uid);
+        console.log("ผู้ใช้เชื่อมต่อแล้ว : ", user.uid);
       })
       .catch((error) => {
-        console.error("Erreur lors de la connexion anonyme : ", error);
+        console.error("เกิดข้อผิดพลาดในการเชื่อมต่อแบบไม่ระบุชื่อ : ", error);
       });
 
     const today = new Date().toISOString().split("T")[0];
     document.getElementById("birthdate").setAttribute('max', today);
 
-    // Charger la liste des pays
+    // โหลดรายชื่อประเทศ
     fetch('https://restcountries.com/v3.1/all')
       .then(response => {
         if (!response.ok) {
-          throw new Error('Erreur réseau : ' + response.status);
+          throw new Error('ข้อผิดพลาดเครือข่าย : ' + response.status);
         }
         return response.json();
       })
@@ -409,7 +409,7 @@
           countrySelect.appendChild(option);
         });
       })
-      .catch(error => console.error('Erreur lors du chargement des pays :', error));
+      .catch(error => console.error('เกิดข้อผิดพลาดในการโหลดประเทศ :', error));
 
     let lastSubmittedId = null;
 
@@ -419,16 +419,16 @@
 
       if (birthdate && country) {
         const submitButton = document.querySelector('.submit-button');
-        submitButton.textContent = "Veuillez patienter...";
+        submitButton.textContent = "กรุณารอสักครู่...";
         submitButton.style.backgroundColor = 'orange';
 
         document.getElementById('genderModal').style.display = 'block';
       } else {
-        alert("Veuillez entrer une date de naissance et sélectionner un pays !");
+        alert("กรุณาใส่วันเกิดและเลือกประเทศ!");
       }
     });
 
-    // Ajouter des écouteurs d'événements à tous les boutons d'option de genre
+    // เพิ่มตัวรับฟังให้กับปุ่มตัวเลือกเพศทั้งหมด
     document.querySelectorAll('.gender-option').forEach(button => {
       button.addEventListener('click', function() {
         submitData(this.value);
@@ -450,14 +450,14 @@
 
       newEntryRef.then(() => {
         submitButton.style.backgroundColor = 'green';
-        submitButton.textContent = "Soumis";
+        submitButton.textContent = "ส่งแล้ว";
         submitButton.disabled = true;
         document.getElementById('resetButton').style.display = "block";
         document.getElementById('genderModal').style.display = 'none';
       }).catch((error) => {
         submitButton.style.backgroundColor = 'red';
-        submitButton.textContent = "Erreur";
-        console.error("Erreur lors de la soumission : ", error);
+        submitButton.textContent = "เกิดข้อผิดพลาด";
+        console.error("เกิดข้อผิดพลาดในการส่ง : ", error);
       });
     }
 
@@ -468,25 +468,25 @@
             document.getElementById('birthdate').value = '';
             document.getElementById('countrySelect').value = '';
             const submitButton = document.querySelector('.submit-button');
-            submitButton.textContent = "Soumettre";
+            submitButton.textContent = "ส่ง";
             submitButton.style.backgroundColor = '#007bff';
             submitButton.disabled = false;
             document.getElementById('resetButton').style.display = "none";
           })
           .catch((error) => {
-            console.error("Erreur lors de la réinitialisation des données : ", error);
+            console.error("เกิดข้อผิดพลาดในการรีเซ็ตข้อมูล : ", error);
           });
       }
     });
 
-    // Fermer le modal en cliquant à l'extérieur
+    // ปิดโมดัลโดยการคลิกด้านนอก
     window.onclick = function(event) {
       const modal = document.getElementById('genderModal');
       if (event.target == modal) {
         modal.style.display = "none";
         const submitButton = document.querySelector('.submit-button');
         submitButton.style.backgroundColor = 'red';
-        submitButton.textContent = "Erreur";
+        submitButton.textContent = "เกิดข้อผิดพลาด";
       }
     };
   </script>
