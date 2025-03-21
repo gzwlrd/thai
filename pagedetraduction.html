@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,64 +7,64 @@
     <link href="https://fonts.googleapis.com/css2?family=Billabong&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #f5f5f5; /* Light background color */
+            background-color: #f5f5f5; /* สีพื้นหลังสว่าง */
             margin: 0;
             padding: 0;
-            color: #333; /* Text color */
-            font-family: 'Roboto', Arial, sans-serif; /* Use a similar font */
+            color: #333; /* สีข้อความ */
+            font-family: 'Roboto', Arial, sans-serif; /* ใช้ฟอนต์ที่คล้ายกัน */
         }
         header {
-            background-color: #ffffff; /* White background */
+            background-color: #ffffff; /* พื้นหลังสีขาว */
             padding: 5px 10px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             height: 50px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
-            max-width: 1200px; /* Limite la largeur du conteneur */
-            margin: 0 auto; /* Centre le conteneur */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* เงาเบา */
+            max-width: 1200px; /* จำกัดความกว้างของคอนเทนเนอร์ */
+            margin: 0 auto; /* จัดกลางคอนเทนเนอร์ */
         }
         h1 {
             margin: 0;
-            font-size: 1.3em; /* Adjusted font size */
+            font-size: 1.3em; /* ปรับขนาดฟอนต์ */
             font-family: 'Billabong', cursive;
-            color: #007BFF; /* Blue color */
+            color: #007BFF; /* สีน้ำเงิน */
         }
         .logo-genz {
-            border: 1.5px solid #007BFF; /* Blue border */
-            padding: 3px 6px; /* Reduced padding */
+            border: 1.5px solid #007BFF; /* ขอบสีน้ำเงิน */
+            padding: 3px 6px; /* ลดการ padding */
             display: inline-block;
             border-radius: 7px;
             white-space: nowrap;
         }
         .divider {
             height: 1px;
-            background-color: #007BFF; /* Blue border */
+            background-color: #007BFF; /* สีน้ำเงิน */
             width: 100%;
-            margin-top: 0; /* Remove top margin */
+            margin-top: 0; /* ลบ margin ด้านบน */
         }
         .divider-text {
             text-align: center;
-            color: #333; /* Text color */
+            color: #333; /* สีข้อความ */
             font-size: 0.9em;
             margin: 10px 0; 
         }
         footer {
             text-align: center;
-            color: #333; /* Text color */
+            color: #333; /* สีข้อความ */
             margin: 20px 0;
             font-size: 0.8em;
         }
-        /* Style pour le menu déroulant */
+        /* สไตล์เมนูดรอปดาวน์ */
         #language-selector {
-            margin-left: auto; /* Pousse le menu à droite */
-            padding: 3px; /* Réduit le padding intérieur */
+            margin-left: auto; /* ขยับเมนูไปทางขวา */
+            padding: 3px; /* ลดการ padding ภายใน */
             border: 1px solid #007BFF;
             border-radius: 5px;
             font-size: 0.9em;
             color: #333;
-            background-color: #ffffff; /* White background */
-            width: 105px; /* Définir la largeur */
+            background-color: #ffffff; /* พื้นหลังสีขาว */
+            width: 105px; /* กำหนดความกว้าง */
         }
     </style>
     <script>
@@ -84,18 +84,17 @@
         <h1 class="logo-genz" translate="no">GZ</h1>
     </a>
     <select id="language-selector" onchange="changeLanguage()">
-        <option value="" disabled selected>Language</option>
+        <option value="" disabled selected>ภาษา</option>
         <option value="https://www.g-z.online/">English</option>
-        
     </select>
 </header>
 
 <div class="divider"></div>
-<div class="divider-text">Page de traduction</div>
+<div class="divider-text">หน้าการแปล</div>
 <div class="divider"></div>
 
 <footer>
-    <p></p> <!-- Suppression de la section copyright -->
+    <p></p> <!-- ส่วนลิขสิทธิ์ถูกลบ -->
 </footer>
 
 </body>
