@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Billabong&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #f5f5f5; /* Couleur de fond claire */
+            background-color: #f5f5f5; /* สีพื้นหลังสว่าง */
             color: var(--text-color);
-            font-family: 'Roboto', Arial, sans-serif; /* Utiliser une police similaire */
+            font-family: 'Roboto', Arial, sans-serif; /* ใช้ฟอนต์ที่คล้ายกัน */
             padding: 20px;
             margin: 0;
         }
@@ -23,15 +23,15 @@
         .header {
             font-size: 1.8em;
             font-family: 'Billabong', cursive;
-            color: #007BFF; /* Couleur bleue */
-            border: 1.5px solid #007BFF; /* Bord bleu */
+            color: #007BFF; /* สีน้ำเงิน */
+            border: 1.5px solid #007BFF; /* ขอบสีน้ำเงิน */
             padding: 4px;
             display: inline-block;
-            border-radius: 12px; /* Bords arrondis */
+            border-radius: 12px; /* มุมโค้ง */
         }
         .divider {
             height: 1px;
-            background-color: #007BFF; /* Couleur de la bordure */
+            background-color: #007BFF; /* สีขอบ */
             width: 100%;
             margin: 5px 0;
         }
@@ -47,7 +47,7 @@
             margin-bottom: 5px;
             font-size: 2em;
             text-decoration: underline;
-            color: #007BFF; /* Couleur bleue */
+            color: #007BFF; /* สีน้ำเงิน */
         }
         .social-message {
             margin-top: 30px;
@@ -55,21 +55,21 @@
         .social-icons {
             display: flex;
             justify-content: center;
-            gap: 15px; /* Espacement entre les icônes */
+            gap: 15px; /* ระยะห่างระหว่างไอคอน */
             margin-top: 20px;
         }
         .icon {
             font-size: 30px; 
-            color: #007BFF; /* Couleur bleue */
+            color: #007BFF; /* สีน้ำเงิน */
             transition: color 0.3s;
-            border: 1px solid #007BFF; /* Bord bleu */
+            border: 1px solid #007BFF; /* ขอบสีน้ำเงิน */
             border-radius: 10px;
             padding: 8px; 
-            background-color: rgba(0, 119, 190, 0.1); /* Fond clair */
+            background-color: rgba(0, 119, 190, 0.1); /* พื้นหลังสว่าง */
             display: inline-block;
         }
         .icon:hover {
-            color: #005f8d; /* Couleur au survol */
+            color: #005f8d; /* สีเมื่อชี้ */
             background-color: rgba(0, 119, 190, 0.2);
         }
         .or-divider {
@@ -82,7 +82,7 @@
             content: '';
             flex: 1;
             height: 1px;
-            background-color: #007BFF; /* Bord bleu */
+            background-color: #007BFF; /* เส้นสีน้ำเงิน */
         }
         .or-divider::before {
             margin-right: 10px;
@@ -96,10 +96,10 @@
         .copy-button {
             margin-top: 10px;
             padding: 10px 17px;
-            border: 1px solid #007BFF; /* Bord bleu */
+            border: 1px solid #007BFF; /* ขอบสีน้ำเงิน */
             border-radius: 13px;
-            background-color: rgba(0, 119, 190, 0.1); /* Fond clair */
-            color: #007BFF; /* Couleur bleue */
+            background-color: rgba(0, 119, 190, 0.1); /* พื้นหลังสว่าง */
+            color: #007BFF; /* สีน้ำเงิน */
             cursor: pointer;
             font-size: 16px;
             transition: background-color 0.3s, color 0.3s;
@@ -110,7 +110,7 @@
         }
         .copy-status {
             margin-top: 10px;
-            color: #007BFF; /* Couleur bleue */
+            color: #007BFF; /* สีน้ำเงิน */
         }
         
     </style>
@@ -125,18 +125,18 @@
     <div class="divider"></div>
 
     <div class="content">
-        <h1>Partagez G-Z</h1>
+        <h1>แบ่งปัน G-Z</h1>
         <div class="short-divider"></div>
-        <p class="social-message">Découvrons qui nous sommes et comment nous appartenons au monde ! En plus du divertissement, apprenons-en plus sur nos générations :</p>
+        <p class="social-message">มาร่วมค้นหาว่าเราเป็นใครและอย่างไรที่เราเป็นส่วนหนึ่งของโลก! นอกจากความบันเทิงแล้ว มาศึกษาเพิ่มเติมเกี่ยวกับรุ่นของเรากันเถอะ:</p>
 
         <div class="social-icons">
             <a href="https://www.g-z.online" target="_blank" class="icon" onclick="share('Facebook')">
                 <i class="fab fa-facebook"></i>
             </a>
-            <a href="https://api.whatsapp.com/send?text=Rejoignez%20G-Z%20!%20Ensemble,%20découvrons%20les%20fascinants%20secrets%20de%20notre%20génération,%20entre%20découvertes%20excitantes%20et%20moments%20de%20divertissement.%20Faites%20partie%20de%20cette%20aventure%20unique!%20🌟%20https://www.g-z.online" target="_blank" class="icon" onclick="share('WhatsApp')">
+            <a href="https://api.whatsapp.com/send?text=เข้าร่วม%20G-Z%20!%20มาร่วมค้นพบ%20ความลับ%20ที่น่าสนใจ%20ของรุ่นของเรา,%20ระหว่าง%20การค้นพบ%20ที่น่าสนใจ%20และ%20ช่วงเวลาความบันเทิง.%20เป็น%20ส่วนหนึ่ง%20ของ%20การผจญภัย%20ที่ไม่เหมือนใคร!%20🌟%20https://www.g-z.online" target="_blank" class="icon" onclick="share('WhatsApp')">
                 <i class="fab fa-whatsapp"></i>
             </a>
-            <a href="https://telegram.me/share/url?url=https://www.g-z.online&text=Rejoignez%20G-Z%20!%20Ensemble,%20découvrons%20les%20fascinants%20secrets%20de%20notre%20génération,%20entre%20découvertes%20excitantes%20et%20moments%20de%20divertissement.%20Faites%20partie%20de%20cette%20aventure%20unique!%20🌟" target="_blank" class="icon" onclick="share('Telegram')">
+            <a href="https://telegram.me/share/url?url=https://www.g-z.online&text=เข้าร่วม%20G-Z%20!%20มาร่วมค้นพบ%20ความลับ%20ที่น่าสนใจ%20ของรุ่นของเรา,%20ระหว่าง%20การค้นพบ%20ที่น่าสนใจ%20และ%20ช่วงเวลาความบันเทิง.%20เป็น%20ส่วนหนึ่ง%20ของ%20การผจญภัย%20ที่ไม่เหมือนใคร!%20🌟" target="_blank" class="icon" onclick="share('Telegram')">
                 <i class="fab fa-telegram"></i>
             </a>
             <a href="https://www.g-z.online" target="_blank" class="icon" onclick="share('Twitter')">
@@ -148,25 +148,25 @@
         </div>
 
         <div class="or-divider">
-            <span style="color: #007BFF;">Ou</span> <!-- Couleur bleue -->
+            <span style="color: #007BFF;">หรือ</span> <!-- สีน้ำเงิน -->
         </div>
 
-        <p class="copy-message">Copiez le lien de partage :</p>
-        <button class="copy-button" onclick="copyLink()">Copier</button>
+        <p class="copy-message">คัดลอกลิงก์เพื่อแบ่งปัน:</p>
+        <button class="copy-button" onclick="copyLink()">คัดลอก</button>
         <p class="copy-status" id="copyStatus"></p>
     </div>
 
     
     <script>
-        const shareText = "Rejoignez G-Z ! Ensemble, découvrons les fascinants secrets de notre génération, entre découvertes excitantes et moments de divertissement. Faites partie de cette aventure unique ! 🌟";
+        const shareText = "เข้าร่วม G-Z! มาร่วมค้นพบความลับที่น่าสนใจของรุ่นของเรา, ระหว่างการค้นพบที่น่าสนใจและช่วงเวลาความบันเทิง. เป็นส่วนหนึ่งของการผจญภัยที่ไม่เหมือนใคร! 🌟";
         const shareLink = "https://www.g-z.online";
 
         function copyLink() {
             navigator.clipboard.writeText(shareLink).then(() => {
-                document.getElementById("copyStatus").innerText = "Le lien de partage suivant a été copié dans votre presse-papiers : " + shareLink;
+                document.getElementById("copyStatus").innerText = "ลิงก์เพื่อแบ่งปันได้ถูกคัดลอกไปยังคลิปบอร์ดของคุณแล้ว: " + shareLink;
             }).catch(err => {
-                console.error("Erreur lors de la copie du texte : ", err);
-                document.getElementById("copyStatus").innerText = "Erreur lors de la copie du texte.";
+                console.error("เกิดข้อผิดพลาดระหว่างการคัดลอกข้อความ: ", err);
+                document.getElementById("copyStatus").innerText = "เกิดข้อผิดพลาดระหว่างการคัดลอกข้อความ.";
             });
         }
 
@@ -177,7 +177,7 @@
                     url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareLink)}&quote=${encodeURIComponent(shareText)}`;
                     break;
                 case 'WeChat':
-                    alert("Le partage sur WeChat se fait généralement via l'application.");
+                    alert("การแชร์ใน WeChat มักจะทำผ่านแอปพลิเคชัน.");
                     return;
                 case 'Twitter':
                     url = `https://twitter.com/intent/tweet?url=${encodeURIComponent(shareLink)}&text=${encodeURIComponent(shareText)}`;
