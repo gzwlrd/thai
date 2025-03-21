@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -210,29 +210,29 @@
         import { getAuth } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
 
         const firebaseConfig = {
-  apiKey: "AIzaSyCrPKQOqw4zciASa_5PbI_etfkvrBaDPDI",
-  authDomain: "genz-abb36.firebaseapp.com",
-  databaseURL: "https://genz-abb36-default-rtdb.firebaseio.com",
-  projectId: "genz-abb36",
-  storageBucket: "genz-abb36.firebasestorage.app",
-  messagingSenderId: "405021535683",
-  appId: "1:405021535683:web:ee5a28fde27f5558046176",
-  measurementId: "G-XZNQND2J00"
-};
+          apiKey: "AIzaSyCrPKQOqw4zciASa_5PbI_etfkvrBaDPDI",
+          authDomain: "genz-abb36.firebaseapp.com",
+          databaseURL: "https://genz-abb36-default-rtdb.firebaseio.com",
+          projectId: "genz-abb36",
+          storageBucket: "genz-abb36.firebasestorage.app",
+          messagingSenderId: "405021535683",
+          appId: "1:405021535683:web:ee5a28fde27f5558046176",
+          measurementId: "G-XZNQND2J00"
+        };
 
         const app = initializeApp(firebaseConfig);
         const db = getDatabase(app);
         const auth = getAuth();
 
-        let allData = {}; // Stocker les données globales
+        let allData = {}; // เก็บข้อมูลทั่วโลก
 
         function fetchData() {
             const birthdatesRef = ref(db, 'birthdates');
             onValue(birthdatesRef, (snapshot) => {
-                allData = snapshot.val() || {}; // Stocker les données dans une variable globale
-                console.log(allData); // Afficher les données récupérées
-                updateCountries(); // Mettre à jour les pays disponibles
-                updateCards(); // Mettre à jour les cartes avec les données
+                allData = snapshot.val() || {}; // เก็บข้อมูลลงในตัวแปรทั่วโลก
+                console.log(allData); // แสดงข้อมูลที่ดึงมา
+                updateCountries(); // อัปเดตประเทศที่มีอยู่
+                updateCards(); // อัปเดตการ์ดด้วยข้อมูล
             });
         }
 
@@ -240,13 +240,13 @@
             const countrySelect = document.getElementById('countrySelect');
             const countries = new Set();
 
-            // Récupérer les pays uniques à partir des données
+            // ดึงประเทศที่ไม่ซ้ำจากข้อมูล
             Object.keys(allData).forEach(userId => {
                 const userData = allData[userId];
-                countries.add(userData.country); // S'assurer que 'country' est une propriété de userData
+                countries.add(userData.country); // ตรวจสอบให้แน่ใจว่า 'country' เป็นคุณสมบัติของ userData
             });
 
-            // Remplir le sélecteur de pays
+            // เติมตัวเลือกประเทศ
             countries.forEach(country => {
                 const option = document.createElement('option');
                 option.value = country;
@@ -268,42 +268,42 @@
 
         function updateCards() {
             const grid = document.getElementById('grid');
-            grid.innerHTML = ''; // Effacer le contenu actuel
+            grid.innerHTML = ''; // ลบเนื้อหาปัจจุบัน
 
             const selectedCountry = document.getElementById('countrySelect').value;
             const selectedCategory = document.getElementById('categorySelect').value;
 
             if (Object.keys(allData).length === 0) {
-                grid.innerHTML = '<p>Aucune donnée trouvée.</p>';
+                grid.innerHTML = '<p>ไม่พบข้อมูล.</p>';
                 return;
             }
 
             const counts = {};
 
-            // Compter par catégorie
+            // นับตามหมวดหมู่
             Object.keys(allData).forEach(userId => {
                 const userData = allData[userId];
                 if (userData.country === selectedCountry || selectedCountry === '') {
                     let key;
                     if (selectedCategory === 'daily') {
-                        key = new Date(userData.date).toLocaleDateString('fr-FR', { weekday: 'long' });
+                        key = new Date(userData.date).toLocaleDateString('th-TH', { weekday: 'long' });
                     } else if (selectedCategory === 'monthly') {
-                        key = new Date(userData.date).toLocaleDateString('fr-FR', { month: 'long' });
+                        key = new Date(userData.date).toLocaleDateString('th-TH', { month: 'long' });
                     } else if (selectedCategory === 'yearly') {
                         key = new Date(userData.date).getFullYear();
                     } else if (selectedCategory === 'gender') {
-                        key = userData.gender; // Pour la catégorie 'gender'
+                        key = userData.gender; // สำหรับหมวดหมู่ 'gender'
                     } else if (selectedCategory === 'age') {
-                        key = calculateAge(userData.date); // Calculer l'âge
+                        key = calculateAge(userData.date); // คำนวณอายุ
                     } else if (selectedCategory === 'population') {
-                        key = userData.country; // Pour la population, utiliser le pays
+                        key = userData.country; // สำหรับประชากรใช้ประเทศ
                     }
 
                     counts[key] = (counts[key] || 0) + 1;
                 }
             });
 
-            // Afficher les cartes
+            // แสดงการ์ด
             Object.keys(counts).forEach(key => {
                 const card = document.createElement('div');
                 card.className = 'card small-card';
@@ -311,13 +311,13 @@
                 grid.appendChild(card);
             });
 
-            // Si aucune donnée n'est trouvée
+            // หากไม่พบข้อมูล
             if (grid.innerHTML === '') {
-                grid.innerHTML = '<p>Aucune donnée trouvée.</p>';
+                grid.innerHTML = '<p>ไม่พบข้อมูล.</p>';
             }
         }
 
-        // Fonction de debounce
+        // ฟังก์ชัน debounce
         function debounce(func, wait) {
             let timeout;
             return function(...args) {
@@ -332,26 +332,26 @@
 
             countrySelect.addEventListener('change', debounce(updateCards, 300));
             categorySelect.addEventListener('change', debounce(updateCards, 300));
-            fetchData(); // Charger les données au démarrage
+            fetchData(); // โหลดข้อมูลเมื่อเริ่มต้น
 
-            // Ouvrir le modal de soutien
+            // เปิด modal สำหรับการสนับสนุน
             document.getElementById('supportBtn').onclick = function() {
                 document.getElementById('supportModal').style.display = 'block';
             };
 
-            // Ouvrir le modal FAQ
+            // เปิด modal FAQ
             document.getElementById('faqBtn').onclick = function() {
                 document.getElementById('faqModal').style.display = 'block';
             };
 
-            // Fermer le modal
+            // ปิด modal
             document.querySelectorAll('.close').forEach(closeButton => {
                 closeButton.onclick = function() {
                     this.closest('.modal').style.display = 'none';
                 };
             });
 
-            // Fermer le modal en cliquant à l'extérieur
+            // ปิด modal โดยการคลิกนอก
             window.onclick = function(event) {
                 const modals = document.querySelectorAll('.modal');
                 modals.forEach(modal => {
@@ -361,27 +361,27 @@
                 });
             };
 
-            // Ouvrir le lien PayPal
+            // เปิดลิงก์ PayPal
             document.getElementById('paypalBtn').onclick = function() {
-                window.location.href = 'https://www.paypal.com/ncp/payment/QN7HEGCSRYJKA';
+                window.location.href = 'https://www.paypal.com/donate/?hosted_button_id=F2EL8FWRAXFSS';
             };
 
-            // Changer la couleur du bouton de soutien chaque seconde
+            // เปลี่ยนสีปุ่มสนับสนุนทุกวินาที
             const supportButton = document.getElementById('supportBtn');
             let isGreenSupport = false;
 
             setInterval(() => {
-                isGreenSupport = !isGreenSupport; // Alterner la couleur
-                supportButton.style.backgroundColor = isGreenSupport ? 'green' : '#007BFF'; // Changer la couleur
+                isGreenSupport = !isGreenSupport; // เปลี่ยนสี
+                supportButton.style.backgroundColor = isGreenSupport ? 'green' : '#007BFF'; // เปลี่ยนสี
             }, 700);
 
-            // Changer la couleur du bouton PayPal chaque seconde
+            // เปลี่ยนสีปุ่ม PayPal ทุกวินาที
             const paypalButton = document.getElementById('paypalBtn');
             let isGreenPaypal = false;
 
             setInterval(() => {
-                isGreenPaypal = !isGreenPaypal; // Alterner la couleur
-                paypalButton.style.backgroundColor = isGreenPaypal ? 'green' : '#007BFF'; // Changer la couleur
+                isGreenPaypal = !isGreenPaypal; // เปลี่ยนสี
+                paypalButton.style.backgroundColor = isGreenPaypal ? 'green' : '#007BFF'; // เปลี่ยนสี
             }, 10000);
         });
     </script>
@@ -394,7 +394,7 @@
     </a>
     <div class="copyright-icon">©️</div>
     <a href="Partage.html">
-        <button class="share-button" aria-label="Partager">
+        <button class="share-button" aria-label="แบ่งปัน">
             <i class="fas fa-share-alt"></i>
         </button>
     </a>
@@ -403,50 +403,50 @@
 <div class="divider"></div>
 
 <div class="button-container">
-    <button id="faqBtn" class="button" aria-label="Questions fréquentes">
-        <i class="fas fa-question-circle" style="margin-right: 2px;"></i> Questions
+    <button id="faqBtn" class="button" aria-label="คำถามที่พบบ่อย">
+        <i class="fas fa-question-circle" style="margin-right: 2px;"></i> คำถาม
     </button>
-    <button id="supportBtn" class="button" aria-label="Soutien" translate="no">
-        <i class="fas fa-hand-holding-heart" style="margin-right: 5px;"></i> Soutenir
+    <button id="supportBtn" class="button" aria-label="สนับสนุน" translate="no">
+        <i class="fas fa-hand-holding-heart" style="margin-right: 5px;"></i> สนับสนุน
     </button>
 </div>
 
 <div class="divider"></div>
 
 <div class="dashboard">
-    <select class="country-select" aria-label="Sélectionner un pays" id="countrySelect">
-        <option value="">Tous les pays</option>
-        <!-- Les options de pays seront ajoutées dynamiquement -->
+    <select class="country-select" aria-label="เลือกประเทศ" id="countrySelect">
+        <option value="">ทุกประเทศ</option>
+        <!-- ตัวเลือกประเทศจะถูกเพิ่มโดยอัตโนมัติ -->
     </select>
 
-    <select class="category-select" aria-label="Sélectionner une catégorie" id="categorySelect">
-        <option value="daily">Naissances par jour</option>
-        <option value="monthly">Naissances par mois</option>
-        <option value="yearly">Naissances par an</option>
-        <option value="gender">Genre</option>
-        <option value="age">Âges</option>
-        <option value="population">Population</option>
+    <select class="category-select" aria-label="เลือกหมวดหมู่" id="categorySelect">
+        <option value="daily">การเกิดต่อวัน</option>
+        <option value="monthly">การเกิดต่อเดือน</option>
+        <option value="yearly">การเกิดต่อปี</option>
+        <option value="gender">เพศ</option>
+        <option value="age">อายุ</option>
+        <option value="population">ประชากร</option>
     </select>
 
     <div class="grid" id="grid">
-        <!-- Les cartes seront générées ici -->
+        <!-- การ์ดจะถูกสร้างที่นี่ -->
     </div>
 </div>
 
-<!-- Modal de Soutien -->
+<!-- Modal สนับสนุน -->
 <div id="supportModal" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
-        <p>Merci de soutenir G-Z ! Chaque soutien compte. Grâce à votre aide, nous pouvons continuer à développer ce projet passionnant, créer des analyses innovantes et fournir des statistiques gratuites à un public mondial.</p>
-        <button id="paypalBtn" class="support-button">Soutenir maintenant</button>
+        <p>ขอบคุณที่สนับสนุน G-Z! การสนับสนุนแต่ละครั้งมีความหมายมาก สำหรับความช่วยเหลือของคุณ เราสามารถพัฒนาโปรเจกต์ที่น่าสนใจนี้ต่อไป สร้างการวิเคราะห์ที่สร้างสรรค์ และให้ข้อมูลสถิติฟรีแก่ผู้ชมทั่วโลก.</p>
+        <button id="paypalBtn" class="support-button">สนับสนุนตอนนี้</button>
     </div>
 </div>
 
-<!-- Modal de Questions Fréquemment Posées -->
+<!-- Modal คำถามที่พบบ่อย -->
 <div id="faqModal" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
-        Les statistiques sont mises à jour automatiquement avec chaque envoi dans les tableaux.
+        สถิติจะถูกอัปเดตโดยอัตโนมัติเมื่อมีการส่งในตาราง.
     </div>
 </div>
 
